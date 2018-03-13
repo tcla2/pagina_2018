@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+</head>
+ 
+<body>
+ 
+<script>
+var arr = [
+	{ "id": 1, "Nombre": "Francisco", "Poblacion": "Madrid" },
+	{ "id": 3, "Nombre": "Jose", "Poblacion": "Sevilla" },
+	{ "id": 2, "Nombre": "Alberto", "Poblacion": "Valencia" }
+];
+ 
+// orden ascendente por el id
+function OrdenarPorIdAscendente(x,y) {
+	return x.id - y.id;
+}
+ 
+// orden descendente por el id
+function OrdenarPorIdDescendente(x,y) {
+	return x.id + y.id;
+}
+ 
+// orden ascendente por el Nombre
+function OrdenarPorNombreAscendente(x,y) {
+	return ((x.Nombre == y.Nombre) ? 0 : ((x.Nombre > y.Nombre) ? 1 : -1 ));
+}
+ 
+// orden descendente por el Nombre
+function OrdenarPorNombreDescendente(x,y) {
+	return ((x.Nombre == y.Nombre) ? 0 : ((x.Nombre < y.Nombre) ? 1 : -1 ));
+}
+ 
+// orden ascendente por la poblacion
+function OrdenarPorPoblacion(x,y) {
+	return ((x.Poblacion == y.Poblacion) ? 0 : ((x.Poblacion > y.Poblacion) ? 1 : -1 ));
+}
+ 
+arr.sort(OrdenarPorIdAscendente);
+document.write("<br/><b>Ordenar por Id ascendente</b><br/>");
+mostrarArray();
+ 
+arr.sort(OrdenarPorIdDescendente);
+document.write("<br/><b>Ordenar por Id descendente</b><br/>");
+mostrarArray();
+ 
+arr.sort(OrdenarPorNombreAscendente);
+document.write("<br/><b>Ordenar por Nombre ascendente</b><br/>");
+mostrarArray();
+ 
+arr.sort(OrdenarPorNombreDescendente);
+document.write("<br/><b>Ordenar por Nombre descendente</b><br/>");
+mostrarArray();
+ 
+arr.sort(OrdenarPorPoblacion);
+document.write("<br/><b>Ordenar por Poblacion</b><br/>");
+mostrarArray();
+ 
+// Función que muestra el array de valores
+function mostrarArray()
+{
+	for(var n=0;n<arr.length;n++){
+		document.write(arr[n].id+' '+arr[n].Nombre+' '+arr[n].Poblacion+'<br>');
+	}
+}
+</script>
+ 
+</body>
+</html>
